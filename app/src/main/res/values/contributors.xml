@@ -14,6 +14,11 @@
 <resources>
 
     <item name="participant" type="string">
+	<participant>
+            <name>Sagnik Mandal</name>
+            <github_id>criticic</github_id>
+        </participant>
+        <participant>
         <participant>
             <name>Ishant Kumawat</name>
             <github_id>insanecoder02</github_id>
@@ -83,6 +88,19 @@
             <name>Rishi Upadhyay</name>
             <github_id>Rishi2674</github_id>
         </participant>
+
+      
+        <participant>
+            <name>Harshal Giner</name>
+            <github_id>Harshal5167</github_id>
+             </participant>
+
+        <participant>
+            <name>Tejas Sharma</name>
+            <github_id>Tej-as1</github_id>
+                 </participant>
+
+
          <participant>
             <name>Sushmitha</name>
             <github_id>imsushmitha-13</github_id>
@@ -91,6 +109,7 @@
         <participant>
             <name>Prakhar Shukla</name>
             <github_id>tonyStark-jr</github_id>
+
         </participant>
 
         <participant>
@@ -124,7 +143,22 @@
 
         </participant>
 
+
+	<participant>
+            <name>Rudresh Dabre</name>
+            <github_id>Rudreshdabre12</github_id>
+        </participant>
 	    
+        <participant>
+            <name>Asher Ahmad</name>
+            <github_id>AshAhmad2022</github_id>
+
+
+        <participant>
+            <name>Sarthak Verma</name>
+            <github_id>sarthakvermaa</github_id>
+        </participant>
+       
         <participant>
 		<name>Vasu Singla</name>
 		<github_id>vasusingla545</github_id>
@@ -135,5 +169,29 @@
 		<name>Dhurv Agrawal</name>
 		<github_id>DHRUVV23</github_id>
 	</participant>
+
+        <participant>
+            <name>Aditya Arya</name>
+            <github_id>arya-007</github_id>
+
+        </participant>
+
+
+	<participant>
+		<name>Karan Deoli</name>
+		<github_id>Karansenpai</github_id>
+	</participant>
+
+
+	<participant>
+		<name>Aniketh Pala</name>
+		<github_id>Aniketh4</github_id>
+	</participant>
+
+        <participant>
+		        <name>Ayush Krishna</name>
+		        <github_id>Ayushk00</github_id>
+	      </participant>
+
     </item>
 </resources>
