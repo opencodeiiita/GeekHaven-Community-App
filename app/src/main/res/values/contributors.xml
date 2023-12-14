@@ -159,6 +159,11 @@
 		<github_id>vasusingla545</github_id>
 	</participant>
 
+	<participant>
+		<name>Karan Deoli</name>
+		<github_id>Karansenpai</github_id>
+	</participant>
+
 
 	<participant>
 		<name>Aniketh Pala</name>
@@ -169,6 +174,5 @@
 		        <name>Ayush Krishna</name>
 		        <github_id>Ayushk00</github_id>
 	      </participant>
-
     </item>
 </resources>
