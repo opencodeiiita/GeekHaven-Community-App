@@ -205,8 +205,15 @@
 	      </participant>
 
 	<participant>
+
+		<name>Ayush Sahu</name>
+		<github_id>Murdock9803</github_id>
+	</participant>
+          
+          	<participant>
             <name>Parth Kansagra</name>
             <github_id>parth_1egend</github_id>
         </participant>
+
     </item>
 </resources>
