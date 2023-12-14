@@ -166,6 +166,12 @@
 
 
     <participant>
+            <name>Nivedh Biju Pazhayeadthuparambil</name>
+            <github_id>Nivedh-Biju</github_id>
+        </participant>
+
+
+    <participant>
 		<name>Dhurv Agrawal</name>
 		<github_id>DHRUVV23</github_id>
 	</participant>
@@ -192,6 +198,5 @@
 		        <name>Ayush Krishna</name>
 		        <github_id>Ayushk00</github_id>
 	      </participant>
-
     </item>
 </resources>
