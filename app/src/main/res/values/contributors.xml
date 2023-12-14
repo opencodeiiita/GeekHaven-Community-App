@@ -108,6 +108,12 @@
         </participant>
 
         <participant>
+            <name>Aryan Yadav</name>
+            <github_id>aryan0931</github_id>
+			  </participant>
+
+
+        <participant>
             <name>Nitu Sherawat</name>
             <github_id>Nitu-Sherawat</github_id>
         </participant>
@@ -115,12 +121,19 @@
         <participant>
             <name>Vineesh Mittal</name>
             <github_id>vineeshmittal1</github_id>
+
         </participant>
+
 
 <participant>
             <name>Ankita singh</name>
             <github_id>saanjh24</github_id>
         </participant>
-        
+      
+	    
+        <participant>
+		<name>Vasu Singla</name>
+		<github_id>vasusingla545</github_id>
+      </participant>
     </item>
 </resources>
