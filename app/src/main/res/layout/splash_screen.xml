@@ -3,13 +3,13 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/splash_background_color">
+    android:background="@color/#0D47A1">
 <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/logo" 
+        android:src="@drawable/logo for app" 
         android:layout_centerInParent="true"
-        android:contentDescription="@string/logo_description" />
+        android:contentDescription="@string/GEEK HAVEN" />
 
 
 
