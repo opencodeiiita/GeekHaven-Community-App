@@ -1,11 +1,11 @@
-package com.example.geekhavencommunityapp
+package com.example.geekhavencommunityapp.activities
 
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
-import android.view.View
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.geekhavencommunityapp.R
 
 class SplashActivity : AppCompatActivity() {
     private val SPLASH_TIME_OUT: Long = 3000
@@ -23,7 +23,6 @@ class SplashActivity : AppCompatActivity() {
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
             finish()
         }
-
         Handler().postDelayed({
             val i = Intent(this, MainActivity::class.java)
             startActivity(i)
