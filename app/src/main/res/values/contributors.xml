@@ -14,6 +14,10 @@
 <resources>
 
     <item name="participant" type="string">
+	<participant>
+            <name>Sagnik Mandal</name>
+            <github_id>criticic</github_id>
+        </participant>
         <participant>
             <name>Ishant Kumawat</name>
             <github_id>insanecoder02</github_id>
@@ -21,6 +25,10 @@
         <participant>
             <name>Gaurav Chhetri</name>
             <github_id>Muffinboy19</github_id>
+        </participant>
+        <participant>
+            <name>Amitabh Singh</name>
+            <github_id>optimus-pride</github_id>
         </participant>
 
       <participant>
@@ -72,6 +80,10 @@
             <github_id>Apoorv012</github_id>
         </participant>
         <participant>
+            <name>Aryan Raj</name>
+            <github_id>Aryan4884</github_id>
+        </participant>
+        <participant>
             <name>Rishi Upadhyay</name>
             <github_id>Rishi2674</github_id>
         </participant>
@@ -79,6 +91,142 @@
         <participant>
             <name>Anukrati Chaturvedi</name>
             <github_id>anukraticodes</github_id>
+        </participant>
+
+      
+        <participant>
+            <name>Harshal Giner</name>
+            <github_id>Harshal5167</github_id>
+             </participant>
+
+        <participant>
+            <name>Tejas Sharma</name>
+            <github_id>Tej-as1</github_id>
+                 </participant>
+
+
+         <participant>
+            <name>Sushmitha</name>
+            <github_id>imsushmitha-13</github_id>
+        </participant>
+
+        <participant>
+            <name>Prakhar Shukla</name>
+            <github_id>tonyStark-jr</github_id>
+
+        </participant>
+
+        <participant>
+            <name>Satvik Dubey</name>
+            <github_id>Satvik7773</github_id>
+        </participant>
+        <participant>
+            <name>Yuvraj Singh Kanoujia</name>
+            <github_id>yuvrajSingh930</github_id>
+        </participant>
+
+        <participant>
+            <name>Pranav Bansal</name>
+            <github_id>PranavBansal21</github_id>
+        </participant>
+
+        <participant>
+            <name>Aryan Yadav</name>
+            <github_id>aryan0931</github_id>
+			  </participant>
+
+
+        <participant>
+            <name>Nitu Sherawat</name>
+            <github_id>Nitu-Sherawat</github_id>
+        </participant>
+        
+        <participant>
+            <name>Vineesh Mittal</name>
+            <github_id>vineeshmittal1</github_id>
+
+        </participant>
+
+
+	<participant>
+            <name>Rudresh Dabre</name>
+            <github_id>Rudreshdabre12</github_id>
+        </participant>
+	    
+        <participant>
+            <name>Asher Ahmad</name>
+            <github_id>AshAhmad2022</github_id>
+        </participant>
+
+
+        <participant>
+            <name>Sarthak Verma</name>
+            <github_id>sarthakvermaa</github_id>
+        </participant>
+       
+        <participant>
+		<name>Vasu Singla</name>
+		<github_id>vasusingla545</github_id>
+	</participant>
+    <participant>
+		<name>Aman Kumar</name>
+		<github_id>amankumar0724</github_id>
+	</participant>
+
+
+
+    <participant>
+            <name>Nivedh Biju Pazhayeadthuparambil</name>
+            <github_id>Nivedh-Biju</github_id>
+        </participant>
+
+
+    <participant>
+		<name>Dhurv Agrawal</name>
+		<github_id>DHRUVV23</github_id>
+	</participant>
+
+        <participant>
+            <name>Aditya Arya</name>
+            <github_id>arya-007</github_id>
+
+        </participant>
+
+
+	<participant>
+		<name>Karan Deoli</name>
+		<github_id>Karansenpai</github_id>
+	</participant>
+
+
+	<participant>
+		<name>Aniketh Pala</name>
+		<github_id>Aniketh4</github_id>
+	</participant>
+
+        <participant>
+		        <name>Ayush Krishna</name>
+		        <github_id>Ayushk00</github_id>
+	      </participant>
+
+	      <participant>
+		        <name>Agatsya Narayanan</name>
+		        <github_id>Agatsya0494</github_id>
+	      </participant>
+	<participant>
+
+		        <name>Sanjay Paul</name>
+		        <github_id>rebornstar1</github_id>
+	      </participant>	
+
+	<participant>
+		<name>Ayush Sahu</name>
+		<github_id>Murdock9803</github_id>
+	</participant>
+          
+          	<participant>
+            <name>Parth Kansagra</name>
+            <github_id>parth_1egend</github_id>
         </participant>
 
     </item>
