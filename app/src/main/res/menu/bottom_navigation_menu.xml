@@ -1,0 +1,23 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/feed"
+        android:title="Feed"
+        android:icon="@drawable/baseline_dynamic_feed_24" />
+
+    <item
+        android:id="@+id/community"
+        android:title="Community"
+        android:icon="@drawable/logo" />
+
+    <item
+        android:id="@+id/project"
+        android:title="Project"
+        android:icon="@drawable/code90" />
+
+    <item
+        android:id="@+id/profile"
+        android:title="Profile"
+        android:icon="@drawable/profiles" />
+
+</menu>
