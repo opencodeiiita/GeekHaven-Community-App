@@ -28,7 +28,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.MainActivity"
+            android:name=".activities.BaseHomeActivity"
             android:exported="true"></activity>
     </application>
 
