@@ -10,4 +10,5 @@
     <style name="SplashScreenTheme" parent="Theme.Material3.DayNight.NoActionBar">
 
     </style>
+
 </resources>

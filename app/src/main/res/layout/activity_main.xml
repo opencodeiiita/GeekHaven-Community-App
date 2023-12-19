@@ -6,16 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".activities.BaseHomeActivity">
 
-    <!-- Your main content goes here -->
 
     <FrameLayout
         android:id="@+id/nav_host_fragment"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="match_parent"
         android:layout_above="@+id/bottom_navigation"
-        android:layout_weight="1"
-        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation">
 
         <!-- Your main content fragment container goes here -->
 
@@ -28,5 +25,6 @@
         style="@style/MyBottomNavBar"
         android:layout_alignParentBottom="true"
         app:menu="@menu/bottom_nav_menu" />
+
 
 </RelativeLayout>

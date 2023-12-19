@@ -5,56 +5,30 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.viewpager.widget.ViewPager
+import com.example.geekhavencommunityapp.FragmentAdapter
 import com.example.geekhavencommunityapp.R
+import com.google.android.material.tabs.TabLayout
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [community.newInstance] factory method to
- * create an instance of this fragment.
- */
 class community : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_community, container, false)
-    }
+        val view = inflater.inflate(R.layout.fragment_community, container, false)
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment community.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            community().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+        val viewPager: ViewPager = view.findViewById(R.id.viewPager)
+        val tabLayout: TabLayout = view.findViewById(R.id.tablayout)
+
+        val fragmentAdapter = FragmentAdapter(childFragmentManager) // Use childFragmentManager instead of supportFragmentManager
+        fragmentAdapter.addFragment(activity(), "Activity") // Assuming ActivityFragment and MessagesFragment are the appropriate fragment classes
+        fragmentAdapter.addFragment(messages(), "Messages")
+
+        viewPager.adapter = fragmentAdapter
+        tabLayout.setupWithViewPager(viewPager)
+
+        return view
     }
 }
