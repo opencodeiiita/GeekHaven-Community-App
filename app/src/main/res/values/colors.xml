@@ -3,4 +3,14 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="app_colour">#001A35</color>
+    <color name="teal">#ff008577</color>
+    <color name="teal_200">#ff03DAC5</color>
+    <color name="teal_700">#ff018786</color>
+    <color name="red">#AB2B2B</color>
+    <color name="golden">#FFD700</color>
+    <color name="c1">#EFA52D</color>
+    <color name="green">#22EA2A</color>
+    <color name="blue">#5F93E1</color>
+    <color name="grey">#B2BEB5</color>
+
 </resources>

@@ -2,13 +2,17 @@ package com.example.geekhavencommunityapp.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.TableLayout
 import com.example.geekhavencommunityapp.R
 import androidx.fragment.app.Fragment
+import androidx.viewpager.widget.ViewPager
+import com.example.geekhavencommunityapp.FragmentAdapter
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.example.geekhavencommunityapp.fragments.community
 import com.example.geekhavencommunityapp.fragments.feed
 import com.example.geekhavencommunityapp.fragments.profile
 import com.example.geekhavencommunityapp.fragments.project
+import com.google.android.material.tabs.TabLayout
 
 class BaseHomeActivity : AppCompatActivity() {
 
