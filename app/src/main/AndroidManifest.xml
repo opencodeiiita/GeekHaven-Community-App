@@ -13,6 +13,12 @@
         android:theme="@style/Theme.GeekHavenCommunityApp"
         tools:targetApi="31">
         <activity
+            android:name=".activities.Loginpage"
+            android:exported="false" />
+        <activity
+            android:name=".activities.PasswordScreen"
+            android:exported="false" />
+        <activity
             android:name=".activities.loginScreen"
             android:exported="false" />
         <activity
