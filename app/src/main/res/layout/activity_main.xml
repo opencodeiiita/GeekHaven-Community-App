@@ -41,7 +41,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/MyBottomNavBar"
-            app:menu="@menu/bottom_nav_menu" />
+            app:menu="@menu/bottom_nav_menu"
+            app:itemIconTint="@drawable/bottom_navigation_selector"
+            app:itemTextColor="@drawable/bottom_navigation_selector"
+            />
 
     </LinearLayout>
 
