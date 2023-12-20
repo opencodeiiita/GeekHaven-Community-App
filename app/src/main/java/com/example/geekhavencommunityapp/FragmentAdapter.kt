@@ -19,7 +19,7 @@ class FragmentAdapter(fm : FragmentManager) : FragmentStatePagerAdapter(fm,
         return fragmentList[position]
     }
 
-    override fun getPageTitle(position: Int): CharSequence? {
+    override fun getPageTitle(position: Int): CharSequence {
         return fragmentTitle[position]
     }
 
