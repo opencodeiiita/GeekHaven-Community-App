@@ -1,25 +1,31 @@
 package com.example.geekhavencommunityapp.activities
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TableLayout
-import com.example.geekhavencommunityapp.R
+import android.view.MenuItem
+import android.widget.Toast
+import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
+import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
-import androidx.viewpager.widget.ViewPager
-import com.example.geekhavencommunityapp.FragmentAdapter
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import androidx.fragment.app.FragmentTransaction
+import com.example.geekhavencommunityapp.R
 import com.example.geekhavencommunityapp.fragments.community
 import com.example.geekhavencommunityapp.fragments.feed
 import com.example.geekhavencommunityapp.fragments.profile
 import com.example.geekhavencommunityapp.fragments.project
-import com.google.android.material.tabs.TabLayout
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.navigation.NavigationView
 
-class BaseHomeActivity : AppCompatActivity() {
+class BaseHomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     private val fragment1 = feed()
     private val fragment2 = project()
     private val fragment3 = community()
     private val fragment4 = profile()
+
+    private lateinit var drawerLayout: DrawerLayout
 
     private val onNavigationItemSelectedListener =
         BottomNavigationView.OnNavigationItemSelectedListener { item ->
@@ -53,6 +59,48 @@ class BaseHomeActivity : AppCompatActivity() {
 
         // Default fragment on startup
         loadFragment(fragment1)
+
+        drawerLayout = findViewById(R.id.drawer_layout)
+        val toolbar: Toolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
+
+        val navigationView = findViewById<NavigationView>(R.id.nav_view)
+        navigationView.setNavigationItemSelectedListener(this)
+
+        val toggle = ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open_nav, R.string.close_nav)
+        drawerLayout.addDrawerListener(toggle)
+        toggle.syncState()
+
+        if (savedInstanceState == null) {
+            replaceFragment(community())
+            navigationView.setCheckedItem(R.id.nav_home)
+        }
+    }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.nav_home -> replaceFragment(feed())
+            R.id.nav_project -> replaceFragment(project())
+            R.id.nav_profile -> replaceFragment(profile())
+            R.id.nav_community -> replaceFragment(community())
+            R.id.nav_developer -> Toast.makeText(this, "ParadoxNJ005!", Toast.LENGTH_SHORT).show()
+        }
+        drawerLayout.closeDrawer(GravityCompat.START)
+        return true
+    }
+
+    private fun replaceFragment(fragment: Fragment) {
+        val transaction: FragmentTransaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.nav_host_fragment, fragment)
+        transaction.commit()
+    }
+
+    override fun onBackPressed() {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START)
+        } else {
+            super.onBackPressed()
+        }
     }
 
     private fun loadFragment(fragment: Fragment) {

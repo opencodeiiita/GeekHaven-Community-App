@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/home_svgrepo_com"
+            android:title="Home" />
+
+        <item
+            android:id="@+id/nav_project"
+            android:icon="@drawable/github_svgrepo_com"
+            android:title="Project" />
+
+        <item
+            android:id="@+id/nav_community"
+            android:icon="@drawable/message_bubble_svgrepo_com"
+            android:title="Community" />
+
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/profile_svgrepo_com"
+            android:title="Profile" />
+
+    </group>
+
+    <item
+        android:title="">
+        <menu>
+            <item
+                android:id="@+id/nav_developer"
+                android:title="Developers"
+                android:icon="@drawable/dav" />
+        </menu>
+
+    </item>
+
+</menu>
