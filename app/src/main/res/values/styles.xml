@@ -9,4 +9,8 @@
         <item name="itemHorizontalTranslationEnabled">false</item>
     </style>
 
+    <style name="CustomTabStyle" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">10sp</item>
+    </style>
+
 </resources>

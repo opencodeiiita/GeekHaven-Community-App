@@ -7,8 +7,8 @@ import androidx.fragment.app.FragmentStatePagerAdapter
 class FragmentAdapter(fm : FragmentManager) : FragmentStatePagerAdapter(fm,
     BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
 
-    var fragmentList : ArrayList<Fragment> = ArrayList()
-    var fragmenttitle : ArrayList<String> = ArrayList()
+    private var fragmentList : ArrayList<Fragment> = ArrayList()
+    private var fragmentTitle : ArrayList<String> = ArrayList()
 
 
     override fun getCount(): Int {
@@ -20,11 +20,11 @@ class FragmentAdapter(fm : FragmentManager) : FragmentStatePagerAdapter(fm,
     }
 
     override fun getPageTitle(position: Int): CharSequence? {
-        return fragmenttitle[position]
+        return fragmentTitle[position]
     }
 
     fun addFragment(fragment: Fragment,title : String){
         fragmentList.add(fragment)
-        fragmenttitle.add(title)
+        fragmentTitle.add(title)
     }
 }

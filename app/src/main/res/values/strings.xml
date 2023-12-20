@@ -48,4 +48,8 @@
     <string name="name">Navigation</string>
     <string name="open_nav">Open Navigation Drawer</string>
     <string name="close_nav">Close Navigation Drawer</string>
+    <string name="background_of_profile">Background of profile</string>
+    <string name="profile_fragment">Profile Fragment</string>
+    <string name="username_placeholder_text">Username</string>
+    <string name="profile_pic">Profile Pic</string>
 </resources>
