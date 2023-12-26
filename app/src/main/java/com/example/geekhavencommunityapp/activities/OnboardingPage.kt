@@ -1,0 +1,74 @@
+package com.example.geekhavencommunityapp
+
+import android.content.Intent
+import android.os.Bundle
+import android.view.View
+import android.widget.Button
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.lifecycle.Lifecycle
+import androidx.viewpager2.adapter.FragmentStateAdapter
+import androidx.viewpager2.widget.ViewPager2
+import com.example.geekhavencommunityapp.activities.BaseHomeActivity
+import com.example.geekhavencommunityapp.fragments.Intro1
+import com.example.geekhavencommunityapp.fragments.Intro2
+import com.example.geekhavencommunityapp.fragments.Intro3
+import com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+import com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
+
+class OnboardingPage : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_onboarding_page)
+
+        val fragmentList = arrayListOf<Fragment>(
+            Intro1(),
+            Intro2(),
+            Intro3()
+        )
+
+        val adapter = ViewPagerAdapter(
+            fragmentList,
+            supportFragmentManager,
+            lifecycle
+        )
+
+        val viewPager = findViewById<ViewPager2>(R.id.view_pager)
+        viewPager.adapter = adapter
+
+        val indicator = findViewById<WormDotsIndicator>(R.id.dots_indicator)
+        indicator.attachTo(viewPager)
+
+        // skip button
+        val skip: TextView = findViewById(R.id.btnSkip)
+        skip.setOnClickListener {
+            val intent = Intent(this, BaseHomeActivity::class.java)
+            startActivity(intent)
+        }
+
+        val next: Button = findViewById(R.id.btnNext)
+        next.setOnClickListener {
+            val viewPager = findViewById<ViewPager2>(R.id.view_pager)
+            if (viewPager.currentItem == 2) {
+                val intent = Intent(this, BaseHomeActivity::class.java)
+                startActivity(intent)
+            }
+            viewPager.currentItem = viewPager.currentItem + 1
+        }
+    }
+}
+
+class ViewPagerAdapter(private val fragmentList: ArrayList<Fragment>, fm: FragmentManager, lifecycle: Lifecycle) :
+    FragmentStateAdapter(fm, lifecycle) {
+
+    override fun getItemCount(): Int {
+        return fragmentList.size
+    }
+
+    override fun createFragment(position: Int): Fragment {
+        return fragmentList[position]
+    }
+}
