@@ -46,25 +46,27 @@ class passwordActivity : AppCompatActivity() {
                         displayName = currentIntent.getStringExtra("username")!!
                     }
 
-                    user!!.updateProfile(profileChanges)
-                        .addOnCompleteListener{task1->
-                            if(task1.isSuccessful)
-                            {
-                                Log.d(TAG, "Successfully set the username")
-                            }
-                            else
-                            {
-                                Log.w(TAG, "createUserWithEmail:failure", task1.exception)
-                                Toast.makeText(
-                                    baseContext,
-                                    "Couldn't update username, You can do that in the Profile Section",
-                                    Toast.LENGTH_SHORT,
-                                ).show()
-                            }
-                        }
+                        user!!.updateProfile(profileChanges)
+                            .addOnCompleteListener { task1 ->
+                                if (task1.isSuccessful) {
+                                    Log.d(TAG, "Successfully set the username")
+                                    Log.d(TAG, "${auth.currentUser?.displayName}")
+                                    startActivity(Intent(this, BaseHomeActivity::class.java))
 
 
-                    startActivity(Intent(this, BaseHomeActivity::class.java))
+                                } else {
+                                    Log.w(TAG, "couldn't set username", task1.exception)
+
+                                    Toast.makeText(
+                                        baseContext,
+                                        "Couldn't update username, You can do that in the Profile Section",
+                                        Toast.LENGTH_LONG,
+                                    ).show()
+
+                                    startActivity(Intent(this, BaseHomeActivity::class.java))
+                                }
+                            }
+
                 } else {
                     // If sign in fails, display a message to the user.
                     Log.w(TAG, "createUserWithEmail:failure", task.exception)

@@ -27,7 +27,6 @@ class emailActivity : AppCompatActivity() {
 
         next.setOnClickListener{
 
-            userModel.setEmail(email.text.toString())
             val intent = Intent(
                 this,
                 passwordActivity:: class.java
@@ -35,7 +34,6 @@ class emailActivity : AppCompatActivity() {
 
             intent.putExtra("email" , email.text.toString())
 
-                Log.d("usernae", getIntent().getStringExtra("username")!!)
                 intent.putExtra("username", getIntent().getStringExtra("username"))
 
                 startActivity(
