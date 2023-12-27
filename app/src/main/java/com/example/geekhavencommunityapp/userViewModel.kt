@@ -4,25 +4,23 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class UserModel: ViewModel()
+object UserModel
 {
-    private val _email = MutableLiveData<String>()
-    private val _password = MutableLiveData<String>()
-    private val _username = MutableLiveData<String>()
-
+    private val _email = MutableLiveData<String?>()
+    private val _password = MutableLiveData<String?>()
+    private val _username = MutableLiveData<String?>()
 
     init{
-        _email.value = "empty"
-        _password.value = "empty"
-        _username.value = "empty"
+        _email.value = ""
+        _username.value= ""
+        _password.value = ""
     }
-
-    val username: String
-        get() = _username.value ?: "null"
-    val email: String
-        get() = _email.value ?: "null"
-    val password: String
-        get() = _password.value ?: "null"
+    val username: String?
+        get() = _username.value
+    val email: String?
+        get() = _email.value
+    val password: String?
+        get() = _password.value
 
     fun setUsername(username: String) {
         _username.value = username
@@ -36,8 +34,4 @@ class UserModel: ViewModel()
         _password.value = password
     }
 
-    override fun onCleared() {
-        super.onCleared()
-
-    }
 }

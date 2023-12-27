@@ -12,7 +12,7 @@ import com.example.geekhavencommunityapp.UserModel
 
 class emailActivity : AppCompatActivity() {
 
-    private val userModel  : UserModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_email)
@@ -21,20 +21,16 @@ class emailActivity : AppCompatActivity() {
         val next = findViewById<Button>(R.id.next_btn)
         val email = findViewById<EditText>(R.id.email)
 
-        // this returns empty string
-        Log.d("IDK", userModel.email)
+        Log.d("Lets check it out", UserModel.username?:"null string recieved")
 
 
         next.setOnClickListener{
+            UserModel.setEmail(email.text.toString())
 
             val intent = Intent(
                 this,
                 passwordActivity:: class.java
             )
-
-            intent.putExtra("email" , email.text.toString())
-
-                intent.putExtra("username", getIntent().getStringExtra("username"))
 
                 startActivity(
                     intent

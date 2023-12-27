@@ -10,16 +10,31 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.example.geekhavencommunityapp.R
 import com.example.geekhavencommunityapp.UserModel
+import com.google.firebase.auth.FacebookAuthProvider
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
 class usernameActivity : AppCompatActivity() {
-   private val userModel  : UserModel by viewModels()
+
+    private lateinit var auth : FirebaseAuth
+    override fun onStart() {
+        super.onStart()
+
+
+        auth = Firebase.auth
+
+        if(auth.currentUser != null)
+        {
+            startActivity(Intent(this, BaseHomeActivity::class.java))
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_username)
 
-        val auth = Firebase.auth
+        auth = Firebase.auth
 
         // for testing logout
 //        if(auth.currentUser != null)
@@ -35,7 +50,7 @@ class usernameActivity : AppCompatActivity() {
 
         next.setOnClickListener{
 
-            userModel.setUsername(username.text.toString())
+            UserModel.setUsername(username.text.toString())
             if(username.text.toString().trim() == "")
             {
                 Toast.makeText(this, "Username field must be non-empty", Toast.LENGTH_SHORT).show()
@@ -52,7 +67,7 @@ class usernameActivity : AppCompatActivity() {
                 this,
                 emailActivity:: class.java)
 
-            intent.putExtra("username", username.text.toString())
+
 
             startActivity(intent)
 

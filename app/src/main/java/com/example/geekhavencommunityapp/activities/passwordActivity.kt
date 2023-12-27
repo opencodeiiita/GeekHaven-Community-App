@@ -19,7 +19,7 @@ import com.google.firebase.ktx.Firebase
 
 class passwordActivity : AppCompatActivity() {
     private lateinit var auth : FirebaseAuth
-    private val userModel  : UserModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_password)
@@ -35,37 +35,13 @@ class passwordActivity : AppCompatActivity() {
             val currentIntent = intent
 
 
-            auth.createUserWithEmailAndPassword(currentIntent.getStringExtra("email")!! , password.text.toString())
+            auth.createUserWithEmailAndPassword(UserModel.email!! , password.text.toString())
                 .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
                     Log.d(TAG, "createUserWithEmail:success")
                     val user = auth.currentUser
-
-                    val profileChanges = userProfileChangeRequest {
-                        displayName = currentIntent.getStringExtra("username")!!
-                    }
-
-                        user!!.updateProfile(profileChanges)
-                            .addOnCompleteListener { task1 ->
-                                if (task1.isSuccessful) {
-                                    Log.d(TAG, "Successfully set the username")
-                                    Log.d(TAG, "${auth.currentUser?.displayName}")
-                                    startActivity(Intent(this, BaseHomeActivity::class.java))
-
-
-                                } else {
-                                    Log.w(TAG, "couldn't set username", task1.exception)
-
-                                    Toast.makeText(
-                                        baseContext,
-                                        "Couldn't update username, You can do that in the Profile Section",
-                                        Toast.LENGTH_LONG,
-                                    ).show()
-
-                                    startActivity(Intent(this, BaseHomeActivity::class.java))
-                                }
-                            }
+                    startActivity(Intent(this, BaseHomeActivity::class.java))
 
                 } else {
                     // If sign in fails, display a message to the user.

@@ -19,13 +19,13 @@ class SplashActivity : AppCompatActivity() {
 
         iv_logo.alpha = 0f
         iv_logo.animate().setDuration(3000).alpha(1f).withEndAction {
-            val i = Intent(this, usernameActivity::class.java)
+            val i = Intent(this, OnboardingPage::class.java)
             startActivity(i)
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
             finish()
         }
         Handler().postDelayed({
-            val i = Intent(this, usernameActivity::class.java)
+            val i = Intent(this, OnboardingPage::class.java)
             startActivity(i)
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
             finish()
