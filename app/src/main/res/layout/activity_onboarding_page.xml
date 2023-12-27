@@ -40,8 +40,8 @@
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_centerInParent="true"
-        android:layout_below="@+id/navigationLayout"/>
+        android:layout_below="@+id/navigationLayout"
+        android:layout_centerInParent="true" />
 
     <Button
         android:layout_width="match_parent"
