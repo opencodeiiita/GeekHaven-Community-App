@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.loginScreen"
+    tools:context=".activities.emailActivity"
     android:background="@color/app_colour">
 
     <TextView
         android:id="@+id/text1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enter your email"
+        android:text="What do you want people"
         android:textSize="25sp"
         android:textColor="@color/white"
         android:layout_marginTop="120dp"
@@ -23,7 +23,7 @@
         android:id="@+id/text2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="to sign up or log in:"
+        android:text="to call you?"
         android:textSize="25sp"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
@@ -42,10 +42,10 @@
         app:layout_constraintTop_toBottomOf="@+id/text2">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/email"
+            android:id="@+id/username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Email"
+            android:hint="Username"
             android:textColorHighlight="@color/white" />
     </com.google.android.material.textfield.TextInputLayout>
 
