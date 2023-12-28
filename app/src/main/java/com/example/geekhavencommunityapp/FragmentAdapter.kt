@@ -2,9 +2,9 @@ package com.example.geekhavencommunityapp
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentStatePagerAdapter
+import androidx.fragment.app.FragmentPagerAdapter
 
-class FragmentAdapter(fm : FragmentManager) : FragmentStatePagerAdapter(fm,
+class FragmentAdapter(fm : FragmentManager) : FragmentPagerAdapter(fm,
     BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
 
     private var fragmentList : ArrayList<Fragment> = ArrayList()
