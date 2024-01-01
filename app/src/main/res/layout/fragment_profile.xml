@@ -50,7 +50,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="280dp"
+            android:layout_marginTop="270dp"
             android:text="@string/username_placeholder_text"
             android:textAlignment="center"
             android:textSize="40sp"
@@ -59,35 +59,28 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/profileAppBarLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="350dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <com.google.android.material.tabs.TabLayout
-                android:id="@+id/profileTabs"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/teal_200"
-                app:tabGravity="fill"
-                app:tabInlineLabel="true"
-                app:tabMode="fixed"
-                app:tabTextAppearance="@style/CustomTabStyle"
-                app:tabTextColor="@color/blue" />
-        </com.google.android.material.appbar.AppBarLayout>
-
-        <androidx.viewpager.widget.ViewPager
-            android:id="@+id/viewPagerProfile"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/profileAppBarLayout" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/profileTabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        app:tabIndicatorColor="@color/app_colour"
+        app:tabSelectedTextColor="@color/app_colour"
+        app:tabTextAppearance="@style/TabLayoutTextStyle"
+        app:tabTextColor="@color/teal"
+        android:background="@color/grey"
+        android:translationY="340dp" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:id="@+id/profileViewPager"
+        android:background="@color/white"
+        android:translationY="400dp"/>
+
+<!--        android:translationY="380dp" />-->
 
 
 </FrameLayout>
