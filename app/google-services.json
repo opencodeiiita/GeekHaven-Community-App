@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "593622028532",
+    "project_id": "geekhaven-app",
+    "storage_bucket": "geekhaven-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:593622028532:android:cb35ebc9ce01c0b1a60ea1",
+        "android_client_info": {
+          "package_name": "com.example.geekhavencommunityapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6zBsc7LtGhmXq3Fh1WmywfltMGd3EEl8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
