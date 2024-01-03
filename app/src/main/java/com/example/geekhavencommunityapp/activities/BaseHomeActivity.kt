@@ -1,7 +1,10 @@
 package com.example.geekhavencommunityapp.activities
 
 import android.os.Bundle
+import android.view.GestureDetector
 import android.view.MenuItem
+import android.view.MotionEvent
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
@@ -25,6 +28,7 @@ class BaseHomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
     private val fragment3 = community()
     private val fragment4 = profile()
 
+    private lateinit var gestureDetector: GestureDetector
     private lateinit var drawerLayout: DrawerLayout
 
     private val onNavigationItemSelectedListener =
@@ -54,6 +58,8 @@ class BaseHomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        gestureDetector = GestureDetector(this, GestureListener())
+
         val navView: BottomNavigationView = findViewById(R.id.bottom_navigation)
         navView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
 
@@ -61,21 +67,46 @@ class BaseHomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
         loadFragment(fragment1)
 
         drawerLayout = findViewById(R.id.drawer_layout)
-        val toolbar: Toolbar = findViewById(R.id.toolbar)
-        setSupportActionBar(toolbar)
+        val sidebarButton: ImageButton = findViewById(R.id.sidebarButton)
 
-        val navigationView = findViewById<NavigationView>(R.id.nav_view)
-        navigationView.setNavigationItemSelectedListener(this)
-
-        val toggle = ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open_nav, R.string.close_nav)
-        drawerLayout.addDrawerListener(toggle)
-        toggle.syncState()
-
-        if (savedInstanceState == null) {
-            replaceFragment(community())
-            navigationView.setCheckedItem(R.id.nav_home)
+        sidebarButton.setOnClickListener {
+            drawerLayout.openDrawer(GravityCompat.START)
         }
     }
+
+    private inner class GestureListener : GestureDetector.OnGestureListener{
+        private val SWIPE_THRESHOLD = 100
+        override fun onDown(p0: MotionEvent): Boolean {
+            TODO("Not yet implemented")
+        }
+
+        override fun onShowPress(p0: MotionEvent) {
+            TODO("Not yet implemented")
+        }
+
+        override fun onSingleTapUp(p0: MotionEvent): Boolean {
+            TODO("Not yet implemented")
+        }
+
+        override fun onScroll(p0: MotionEvent?, p1: MotionEvent, p2: Float, p3: Float): Boolean {
+            TODO("Not yet implemented")
+        }
+
+        override fun onLongPress(p0: MotionEvent) {
+            TODO("Not yet implemented")
+        }
+
+        override fun onFling(e1: MotionEvent?, e2: MotionEvent, velocityX: Float, velocityY: Float): Boolean {
+            // Check if the swipe is from left to right
+            if (e1 != null && e1.x < e2.x && e2.x - e1.x > SWIPE_THRESHOLD) {
+                // Open the drawer
+                drawerLayout.openDrawer(GravityCompat.START)
+                return true
+            }
+            return false
+        }
+    }
+
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {

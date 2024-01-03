@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OnboardingPage"
+    android:padding="20dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center_vertical"
+        android:layout_alignParentTop="true"
+        android:id="@+id/navigationLayout">
+        <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
+            android:id="@+id/dots_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:dotsColor="#006ee9"
+            app:dotsSize="10dp"
+            app:dotsSpacing="6dp"
+            app:progressMode="true"
+            app:selectedDotColor="#EEF5FD" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Skip"
+            android:textColor="#006ee9"
+            android:textSize="12sp"
+            android:padding="10dp"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/btnSkip"/>
+    </RelativeLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/navigationLayout"
+        android:layout_centerInParent="true" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/stylized_button"
+        app:backgroundTint="#006ee9"
+        android:text="Get Started"
+        android:fontFamily="@font/poppins"
+        android:id="@+id/btnNext"/>
+
+
+</RelativeLayout>

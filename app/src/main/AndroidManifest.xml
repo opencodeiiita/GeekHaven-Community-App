@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,13 +13,19 @@
         android:theme="@style/Theme.GeekHavenCommunityApp"
         tools:targetApi="31">
         <activity
+            android:name=".OnboardingPage"
+            android:exported="false" />
+        <activity
             android:name=".activities.Loginpage"
             android:exported="false" />
         <activity
-            android:name=".activities.PasswordScreen"
+            android:name=".activities.usernameActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.loginScreen"
+            android:name=".activities.passwordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.emailActivity"
             android:exported="false" />
         <activity
             android:name=".HomeActivity"
@@ -39,6 +45,10 @@
         <activity
             android:name=".activities.BaseHomeActivity"
             android:exported="true" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

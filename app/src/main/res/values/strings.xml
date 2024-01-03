@@ -52,4 +52,8 @@
     <string name="profile_fragment">Profile Fragment</string>
     <string name="username_placeholder_text">Username</string>
     <string name="profile_pic">Profile Pic</string>
+    <string name="side_drawer">Side Drawer</string>
+    <string name="posts">Posts</string>
+    <string name="likes">Likes</string>
+    <string name="following">Following</string>
 </resources>

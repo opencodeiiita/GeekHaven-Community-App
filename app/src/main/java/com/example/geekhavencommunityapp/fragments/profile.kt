@@ -13,34 +13,26 @@ import com.google.android.material.tabs.TabLayout
 
 class profile : Fragment() {
 
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        setUpTabs()
-    }
-
-
-    private fun setUpTabs() {
-
-        val adapter = FragmentAdapter(childFragmentManager)
-        adapter.addFragment(PostFragment(), "Post")
-        adapter.addFragment(LikeFragment(), "Like")
-        adapter.addFragment(FollowingFragment(), "Following")
-
-        val viewPager: ViewPager? = view?.findViewById(R.id.viewPagerProfile)
-        viewPager?.adapter = adapter
-
-        val tabLayout: TabLayout? = view?.findViewById(R.id.profileAppBarLayout)
-        tabLayout?.setupWithViewPager(viewPager)
-
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false)
+        val view = inflater.inflate(R.layout.fragment_profile, container, false)
+
+        val viewPager: ViewPager = view.findViewById(R.id.profileViewPager)
+        val tabLayout: TabLayout = view.findViewById(R.id.profileTabLayout)
+
+        val adapter = FragmentAdapter(childFragmentManager) // Use childFragmentManager instead of supportFragmentManager
+
+        adapter.addFragment(PostFragment(), "Post")
+        adapter.addFragment(LikeFragment(), "Like")
+        adapter.addFragment(FollowingFragment(), "Following")
+
+        viewPager.adapter = adapter
+        tabLayout.setupWithViewPager(viewPager)
+
+        return view
     }
+
 }

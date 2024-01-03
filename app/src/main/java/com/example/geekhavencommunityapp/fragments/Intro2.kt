@@ -5,16 +5,23 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import androidx.viewpager2.widget.ViewPager2
 import com.example.geekhavencommunityapp.R
 
-
-class project : Fragment() {
-
+/**
+ * A simple [Fragment] subclass.
+ * Use the [Intro2.newInstance] factory method to
+ * create an instance of this fragment.
+ */
+class Intro2 : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_project, container, false)
+        val view =  inflater.inflate(R.layout.fragment_intro2, container, false)
+        val viewPager = activity?.findViewById<ViewPager2>(R.id.view_pager)
+        return view
     }
 }
