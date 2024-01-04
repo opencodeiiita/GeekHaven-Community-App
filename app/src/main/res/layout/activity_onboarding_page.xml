@@ -5,54 +5,68 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".OnboardingPage"
-    android:padding="20dp">
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="20dp"
-        android:gravity="center_vertical"
-        android:layout_alignParentTop="true"
-        android:id="@+id/navigationLayout">
-        <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
-            android:id="@+id/dots_indicator"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:dotsColor="#006ee9"
-            app:dotsSize="10dp"
-            app:dotsSpacing="6dp"
-            app:progressMode="true"
-            app:selectedDotColor="#EEF5FD" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Skip"
-            android:textColor="#006ee9"
-            android:textSize="12sp"
-            android:padding="10dp"
-            android:layout_alignParentEnd="true"
-            android:id="@+id/btnSkip"/>
-    </RelativeLayout>
+    android:background="#0a0c16">
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/navigationLayout"
+        android:layout_above="@+id/navigationLayout"
         android:layout_centerInParent="true" />
 
-    <Button
-        android:layout_width="match_parent"
+    <ImageView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="10dp"
+        android:src="@drawable/intro_rectangle"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/stylized_button"
-        app:backgroundTint="#006ee9"
-        android:text="Get Started"
-        android:fontFamily="@font/poppins"
         android:id="@+id/btnNext"/>
 
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/navigationLayout">
 
+        <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+            android:id="@+id/dots_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:dotsColor="#333580ff"
+            app:dotsSize="10dp"
+            app:dotsSpacing="6dp"
+            app:progressMode="false"
+            app:selectedDotColor="#3580ff"
+            android:layout_marginLeft="30dp"/>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dots_indicator"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            android:layout_centerHorizontal="true"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Skip"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:padding="10dp"
+                android:layout_marginStart="20dp"
+                android:id="@+id/btnSkip"/>
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/arrow_forward"
+                android:background="@null"
+                app:tint="@color/white"
+                android:padding="10dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="10dp"/>
+        </RelativeLayout>
+    </RelativeLayout>
 </RelativeLayout>

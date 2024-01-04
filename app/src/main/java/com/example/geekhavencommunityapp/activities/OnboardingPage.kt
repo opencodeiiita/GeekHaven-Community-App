@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -43,7 +44,7 @@ class OnboardingPage : AppCompatActivity() {
         val viewPager = findViewById<ViewPager2>(R.id.view_pager)
         viewPager.adapter = adapter
 
-        val indicator = findViewById<WormDotsIndicator>(R.id.dots_indicator)
+        val indicator = findViewById<DotsIndicator>(R.id.dots_indicator)
         indicator.attachTo(viewPager)
 
         // skip button
@@ -53,7 +54,7 @@ class OnboardingPage : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val next: Button = findViewById(R.id.btnNext)
+        val next: ImageView = findViewById(R.id.btnNext)
         next.setOnClickListener {
             val viewPager = findViewById<ViewPager2>(R.id.view_pager)
             if (viewPager.currentItem == 2) {

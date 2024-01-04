@@ -1,45 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".OnboardingPage">
-
-
+    tools:context=".OnboardingPage"
+    android:background="#0a0c16">
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:src="@drawable/portfolio_illustration"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="120dp"/>
+        android:layout_width="match_parent"
+        android:layout_marginRight="30dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/illustration1"
+        android:adjustViewBounds="true"/>
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="57dp"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/poppins_medium"
         android:text="Easy time management"
-        android:textColor="@color/black"
+        android:textColor="#3580ff"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        android:layout_marginHorizontal="30dp"
+        android:layout_below="@+id/imageView2" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="400dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
-        android:gravity="center"
-        android:text="With management based on priority and \ndaily tasks, it will give you convenience in \nmanaging and determining the tasks that \nmust be done first "
-        android:textColor="#414646"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@+id/textView"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView"/>
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/poppins"
+        android:gravity="left"
+        android:text="@string/intro1String"
+        android:textColor="@color/white"
+        android:textSize="35sp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="50dp"
+        android:layout_below="@+id/textView" />
+</RelativeLayout>
