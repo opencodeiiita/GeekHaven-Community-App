@@ -1,48 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp"
-    tools:context=".OnboardingPage">
-
-
+    tools:context=".OnboardingPage"
+    android:background="#0a0c16">
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:src="@drawable/message_illustration"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="120dp"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/illustration3"
+        android:adjustViewBounds="true"
+        android:layout_marginBottom="55dp"/>
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="57dp"
-        android:fontFamily="@font/poppins"
-        android:text="Reminder Notification"
-        android:textColor="@color/black"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Easy time management"
+        android:textColor="#3580ff"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        android:layout_marginHorizontal="30dp"
+        android:layout_below="@+id/imageView2" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="400dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="10dp"
         android:fontFamily="@font/poppins"
-        android:gravity="center"
-        android:text="The advantage of this application is that it \nalso provides reminders for you \nso you don't forget to keep doing your \nassignments well and according to the \ntime you have set"
-        android:textColor="#4a4646"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@+id/textView"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView"/>
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:gravity="left"
+        android:text="@string/intro3String"
+        android:textColor="@color/white"
+        android:textSize="35sp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="50dp"
+        android:layout_below="@+id/textView" />
+</RelativeLayout>
