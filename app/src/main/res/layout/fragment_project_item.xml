@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="#0a0c16"
-    tools:context=".fragments.TaskItem">
+    tools:context=".fragments.ProjectItem">
 
     <RelativeLayout
         android:id="@+id/relativeLayoutTask"

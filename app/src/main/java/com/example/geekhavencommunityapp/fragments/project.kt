@@ -1,8 +1,6 @@
 package com.example.geekhavencommunityapp.fragments
 
-import android.content.Intent
 import android.os.Bundle
-import android.provider.MediaStore.Images
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -13,7 +11,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.geekhavencommunityapp.R
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.ktx.Firebase
 
 data class Task(
     val name: String,
@@ -80,7 +77,7 @@ class TaskAdapter(private val tasks: List<Task>) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.fragment_task_item, parent, false)
+            .inflate(R.layout.fragment_project_item, parent, false)
         return TaskViewHolder(view)
     }
 

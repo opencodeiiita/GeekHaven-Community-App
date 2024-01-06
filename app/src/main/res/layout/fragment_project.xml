@@ -130,6 +130,6 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/relativeLayoutCategories"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/fragment_task_item" />
+            tools:listitem="@layout/fragment_project_item" />
     </RelativeLayout>
 </FrameLayout>
