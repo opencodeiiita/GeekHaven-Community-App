@@ -13,11 +13,4 @@
         <item name="android:textSize">10sp</item>
     </style>
 
-    <style name="CustomTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-        <item name="boxStrokeColor">#B42B2B</item>
-    </style>
-
-
-
-
 </resources>

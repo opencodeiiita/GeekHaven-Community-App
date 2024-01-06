@@ -59,6 +59,4 @@
     <string name="intro1String">Let\'s create a <font color="#3580ff"><b>space</b></font> for your workflows.</string>
     <string name="intro2String">Work more <font color="#3580ff"><b>Structured</b></font> and Organized 👌</string>
     <string name="intro3String">Manage your <font color="#3580ff"><b>Tasks</b></font> quickly for Results✌</string>
-    <string name="signinString">Not Register Yet? <font color="#3580ff"><b>Sign Up</b></font></string>
-    <string name="signupString">Have an Account? <font color="#3580ff"><b>Sign In</b></font></string>
 </resources>
