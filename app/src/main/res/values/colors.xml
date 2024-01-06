@@ -12,5 +12,5 @@
     <color name="green">#22EA2A</color>
     <color name="blue">#5F93E1</color>
     <color name="grey">#B2BEB5</color>
-
+    <color name="theme_color">#0a0c16</color>
 </resources>

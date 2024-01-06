@@ -16,6 +16,7 @@ import androidx.fragment.app.FragmentTransaction
 import com.example.geekhavencommunityapp.R
 import com.example.geekhavencommunityapp.fragments.community
 import com.example.geekhavencommunityapp.fragments.feed
+import com.example.geekhavencommunityapp.fragments.Home
 import com.example.geekhavencommunityapp.fragments.profile
 import com.example.geekhavencommunityapp.fragments.project
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -23,7 +24,7 @@ import com.google.android.material.navigation.NavigationView
 
 class BaseHomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
-    private val fragment1 = feed()
+    private val fragment1 = Home()
     private val fragment2 = project()
     private val fragment3 = community()
     private val fragment4 = profile()

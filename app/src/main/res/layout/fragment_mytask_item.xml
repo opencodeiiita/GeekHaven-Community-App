@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="20dp"
+    android:layout_marginEnd="20dp"
+    android:background="@drawable/rounder_corners"
+    android:layout_marginBottom="15dp"
+    android:orientation="horizontal"
+    >
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:id="@+id/name"
+        android:textColor="#474b55"
+        android:text="Productivity Mobile App"
+        android:layout_marginTop="10dp"
+        android:textSize="12sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:fontFamily="@font/poppins"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:textColor="@color/white"
+        android:id="@+id/des"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Create Detail Booking"
+        android:layout_alignParentStart="true"
+        android:layout_below= "@+id/name"
+        android:layout_marginStart="20dp"
+
+        android:layout_gravity="start"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2 min ago"
+        android:id="@+id/time"
+        android:textSize="12sp"
+        android:layout_alignParentStart="true"
+        android:layout_below= "@+id/des"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/poppins"
+        android:textColor="#474b55"
+        android:layout_gravity="start"/>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="20dp"
+        android:layout_centerInParent="true"
+        >
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/progress_background"
+        android:progressDrawable="@drawable/progress_ring"
+        android:indeterminate="false"
+        android:max="100"
+        android:progress="60"
+        android:progressTint="#3580ff" />
+
+        <TextView
+            android:id="@+id/percentage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:text="60%"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+</FrameLayout>
+
+</RelativeLayout>
