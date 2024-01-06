@@ -17,6 +17,7 @@ import com.example.geekhavencommunityapp.activities.usernameActivity
 import com.example.geekhavencommunityapp.fragments.Intro1
 import com.example.geekhavencommunityapp.fragments.Intro2
 import com.example.geekhavencommunityapp.fragments.Intro3
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.tbuonomo.viewpagerdotsindicator.DotsIndicator
@@ -24,6 +25,18 @@ import com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
 
 class OnboardingPage : AppCompatActivity() {
 
+    private lateinit var auth : FirebaseAuth
+    override fun onStart() {
+        super.onStart()
+
+
+        auth = Firebase.auth
+
+        if(auth.currentUser != null)
+        {
+            startActivity(Intent(this, BaseHomeActivity::class.java))
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

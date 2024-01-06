@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#0a0c16"
+    tools:context=".fragments.TaskItem">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutTask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="5dp"
+        android:padding="20dp"
+        android:background="@drawable/outlined_search_box">
+        <TextView
+            android:id="@+id/textViewTaskTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Unity Dashboard ☺"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:fontFamily="@font/poppins_medium"
+            android:layout_alignParentTop="true"/>
+
+        <TextView
+            android:id="@+id/textViewTaskType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Design"
+            android:textColor="#848a94"
+            android:textSize="13sp"
+            android:fontFamily="@font/poppins"
+            android:layout_below="@+id/textViewTaskTitle"/>
+
+        <ImageView
+            android:id="@+id/imageViewTaskPeople"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewTaskType"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/people"/>
+
+        <ProgressBar
+            android:id="@+id/progressBarTask"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/imageViewTaskPeople"
+            android:layout_below="@+id/textViewTaskType"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:progress="50"
+            android:progressDrawable="@drawable/progress_bar"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"/>
+
+        <TextView
+            android:id="@+id/textViewTaskProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10/20"
+            android:textColor="@color/white"
+            android:textSize="11sp"
+            android:fontFamily="@font/poppins"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/color_pill"
+            android:paddingStart="15dp"
+            android:paddingEnd="5dp"
+            android:paddingVertical="1dp" />
+    </RelativeLayout>
+
+</FrameLayout>
