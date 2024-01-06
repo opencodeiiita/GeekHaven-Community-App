@@ -3,7 +3,7 @@
 
 
     <style name="MyBottomNavBar" parent="Widget.MaterialComponents.BottomNavigationView">
-        <!--        <item name="itemBackground">@color/sustem</item>-->
+        <!--        <item name="itemBackground">@color/system</item>-->
         <item name="android:background">@color/app_colour</item>
         <!--        <item name="android:textColor">@color/red</item>-->
         <item name="itemHorizontalTranslationEnabled">false</item>
@@ -11,6 +11,16 @@
 
     <style name="CustomTabStyle" parent="TextAppearance.Design.Tab">
         <item name="android:textSize">10sp</item>
+    </style>
+    <style name="Theme.Fab_Bottom_app_bar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#3580FF</item>
+        <item name="colorPrimaryVariant">#3580FF</item>
+        <item name="colorOnPrimary">#000</item>
+    </style>
+
+    <style name="CircularShape" parent="">
+
+        <item name="cornerSize">50%</item>
     </style>
 
 </resources>

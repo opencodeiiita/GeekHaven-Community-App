@@ -11,10 +11,11 @@
     tools:context=".activities.BaseHomeActivity"
     android:background="@color/white">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/nav_host_fragment"
+        app:fabCradleMargin="20dp"
         >
 
         <ImageButton
@@ -33,16 +34,32 @@
             android:id="@+id/bottom_navigation"
             style="@style/MyBottomNavBar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="68dp"
+            android:layout_gravity="bottom"
+            android:elevation="8dp"
             app:itemIconTint="@drawable/bottom_nav_selector"
             app:itemTextColor="@drawable/bottom_nav_selector"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:menu="@menu/bottom_nav_menu" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            app:menu="@menu/bottom_nav_menu">
 
-        <com.google.android.material.navigation.NavigationView
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+        <ImageButton
+            android:id="@+id/AddButton"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:backgroundTint="@color/transparent"
+            android:contentDescription="@string/app_name"
+            android:elevation="10dp"
+            android:src="@drawable/add_bottom_nav"
+            app:layout_anchor="@+id/navigation_item5"
+            app:layout_anchorGravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:maxImageSize="50dp"
+            app:shapeAppearanceOverlay="@style/CircularShape"/>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <com.google.android.material.navigation.NavigationView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:id="@+id/nav_view"
