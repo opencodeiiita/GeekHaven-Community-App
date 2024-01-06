@@ -8,17 +8,21 @@
 
     <item
         android:id="@+id/navigation_item2"
-        android:icon="@drawable/github_svgrepo_com"
-        android:title="project" />
+        android:icon="@drawable/folder_svgrepo_com"
+        android:title="Project" />
+
+    <item
+        android:id="@+id/navigation_item5"
+        android:title="Add" />
 
     <item
         android:id="@+id/navigation_item3"
-        android:icon="@drawable/message_bubble_svgrepo_com"
-        android:title="community" />
+        android:icon="@drawable/message_circle_dots_svgrepo_com"
+        android:title="Community" />
 
     <item
         android:id="@+id/navigation_item4"
         android:icon="@drawable/profile_svgrepo_com"
-        android:title="profile" />
+        android:title="Profile" />
 
 </menu>

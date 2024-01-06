@@ -13,13 +13,13 @@
 
         <item
             android:id="@+id/nav_project"
-            android:icon="@drawable/github_svgrepo_com"
+            android:icon="@drawable/folder_svgrepo_com"
             android:title="Project" />
 
         <item
             android:id="@+id/nav_community"
-            android:icon="@drawable/message_bubble_svgrepo_com"
-            android:title="Community" />
+            android:icon="@drawable/message_circle_dots_svgrepo_com"
+            android:title="Community"/>
 
         <item
             android:id="@+id/nav_profile"
