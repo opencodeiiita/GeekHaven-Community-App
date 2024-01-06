@@ -2,15 +2,12 @@ package com.example.geekhavencommunityapp.activities
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.example.geekhavencommunityapp.R
 import com.example.geekhavencommunityapp.UserModel
-import com.google.firebase.auth.FacebookAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -66,7 +63,7 @@ class usernameActivity : AppCompatActivity() {
 
             val intent = Intent(
                 this,
-                emailActivity:: class.java)
+                BaseHomeActivity:: class.java)
 
 
 
