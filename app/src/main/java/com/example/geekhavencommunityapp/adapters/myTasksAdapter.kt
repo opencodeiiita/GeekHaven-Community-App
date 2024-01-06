@@ -32,7 +32,7 @@ class myTasksAdapter(private val tasks: List<myTask>) : RecyclerView.Adapter<myT
         holder.taskDescription.text = task.taskDescription
         holder.taskDate.text = task.taskDate
         holder.taskProgress.text = task.taskProgress.toString() + "%"
-        holder.progress.setProgress(task.taskProgress, true)
+        holder.progress.setProgress(task.taskProgress.toInt(), true)
     }
 
     override fun getItemCount(): Int {

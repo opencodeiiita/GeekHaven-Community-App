@@ -15,6 +15,7 @@ import com.example.geekhavencommunityapp.adapters.myTasksAdapter
 import com.example.geekhavencommunityapp.data.Task
 import com.example.geekhavencommunityapp.data.myTask
 import com.google.android.gms.tasks.Tasks
+import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import java.text.SimpleDateFormat
 import java.util.Date
@@ -31,7 +32,7 @@ class Home : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view =  inflater.inflate(R.layout.fragment_home, container, false)
+        val view = inflater.inflate(R.layout.fragment_home, container, false)
 
         // setting date
         val date = Date()
@@ -43,27 +44,80 @@ class Home : Fragment() {
 
 
         // setting mytasks
-
-        val myTasks = mutableListOf<myTask>()
-
-        val myTaskRecycler: RecyclerView = view.findViewById(R.id.myTasks)
-        val adapter = myTasksAdapter(myTasks)
-
-        myTaskRecycler.adapter = adapter
-        myTaskRecycler.layoutManager = LinearLayoutManager(requireContext())
-
+        fillMyTasks(view)
 
         // setting tasks
+        fillTasks(view)
 
-
-        val tasks = mutableListOf<Task>()
-
-        val TaskRecycler: RecyclerView = view.findViewById(R.id.tasks)
-        val Taskadapter = TaskAdapter(tasks)
-
-        TaskRecycler.adapter = Taskadapter
-        TaskRecycler.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
 
         return view
     }
+
+
+    private fun fillMyTasks(view:View)
+    {
+        val myTasksDb = Firebase.firestore.collection("myTask")
+        val myTasks = mutableListOf<myTask>()
+
+        myTasksDb.get()
+            .addOnSuccessListener { documents ->
+                for (document in documents) {
+                    val myTaskData = document.data
+                    val myTaskEntry = myTask(
+                        myTaskData["name"] as String,
+                        myTaskData["description"] as String,
+                        myTaskData["date"] as String,
+                        myTaskData["progress"] as Long,
+                    )
+                    myTasks.add(myTaskEntry)
+
+
+                }
+
+                val myTaskRecycler: RecyclerView = view.findViewById(R.id.myTasks)
+                val adapter = myTasksAdapter(myTasks)
+
+                myTaskRecycler.adapter = adapter
+                myTaskRecycler.layoutManager = LinearLayoutManager(requireContext())
+
+            }
+            .addOnFailureListener{
+                fillMyTasks(view)
+            }
+    }
+    private fun fillTasks(view: View)
+    {
+        val tasksDb = Firebase.firestore.collection("Task")
+        val tasks = mutableListOf<Task>()
+
+        tasksDb.get()
+            .addOnSuccessListener{
+                    documents->
+                for(document in documents) {
+                    val taskData = document.data
+                    val taskEntry = Task(
+                        taskData["name"] as String,
+                        taskData["description"] as String,
+                        taskData["progress"] as Long,
+                        taskData["total"] as Long,
+                        taskData["image1"] as String,
+                        taskData["image2"] as String,
+                        taskData["image3"] as String,
+                    )
+                    tasks.add(taskEntry)
+                }
+
+                val TaskRecycler: RecyclerView = view.findViewById(R.id.tasks)
+                val Taskadapter = TaskAdapter(tasks)
+
+                TaskRecycler.adapter = Taskadapter
+                TaskRecycler.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            }
+            .addOnFailureListener{
+                fillTasks(view)
+            }
+
+
+    }
+
 }

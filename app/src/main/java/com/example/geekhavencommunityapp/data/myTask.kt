@@ -4,5 +4,5 @@ data class myTask (
     val taskName: String,
     val taskDescription: String,
     val taskDate: String,
-    val taskProgress: Int,
+    val taskProgress: Long,
 )
