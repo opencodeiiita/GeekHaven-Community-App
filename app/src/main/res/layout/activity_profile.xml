@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/theme_color">
+    android:background="@color/theme_color"
+    android:layout_marginBottom="68dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -19,8 +20,8 @@
             android:layout_height="42dp"
             android:layout_marginTop="28dp"
             android:clickable="true"
-            android:foreground="@drawable/back_arrow"
-            android:rotation="180"
+            android:rotation="0"
+            android:foreground="@drawable/profile_back_button"
             app:layout_constraintEnd_toStartOf="@+id/textView6"
             app:layout_constraintHorizontal_bias="0.282"
             app:layout_constraintStart_toStartOf="parent"
@@ -102,7 +103,8 @@
             android:layout_marginTop="20dp"
             android:orientation="horizontal"
             app:layout_constraintTop_toBottomOf="@+id/button"
-            tools:layout_editor_absoluteX="0dp">
+            tools:layout_editor_absoluteX="0dp"
+            >
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -285,7 +287,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/button5"
-            app:layout_constraintWidth_percent="0.8">
+            app:layout_constraintWidth_percent="0.8"
+            android:layout_marginBottom="300dp">
 
             <Button
                 android:layout_width="match_parent"
