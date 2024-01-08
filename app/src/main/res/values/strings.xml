@@ -59,4 +59,5 @@
     <string name="intro1String">Let\'s create a <font color="#3580ff"><b>space</b></font> for your workflows.</string>
     <string name="intro2String">Work more <font color="#3580ff"><b>Structured</b></font> and Organized 👌</string>
     <string name="intro3String">Manage your <font color="#3580ff"><b>Tasks</b></font> quickly for Results✌</string>
+    <string name="searchHint"><font face="poppins_medium" size="14"><b>Search</b></font></string>
 </resources>
