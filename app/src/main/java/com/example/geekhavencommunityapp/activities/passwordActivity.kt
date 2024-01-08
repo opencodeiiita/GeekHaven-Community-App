@@ -35,7 +35,8 @@ class passwordActivity : AppCompatActivity() {
             val currentIntent = intent
 
 
-            auth.createUserWithEmailAndPassword(UserModel.email!! , password.text.toString())
+            auth.signInWithEmailAndPassword(UserModel.email!! , password.text.toString())
+//            auth.createUserWithEmailAndPassword(UserModel.email!! , password.text.toString())
                 .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
