@@ -22,16 +22,22 @@
             android:name=".activities.usernameActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.passwordActivity"
+            android:name=".activities.signinActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.emailActivity"
+            android:name=".activities.signupActivity"
             android:exported="false" />
-        <activity
-            android:name=".HomeActivity"
-            android:exported="false"
-            android:label="@string/title_activity_home"
-            android:theme="@style/Theme.GeekHavenCommunityApp" />
+<!--        <activity-->
+<!--            android:name=".activities.passwordActivity"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".activities.emailActivity"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".HomeActivity"-->
+<!--            android:exported="false"-->
+<!--            android:label="@string/title_activity_home"-->
+<!--            android:theme="@style/Theme.GeekHavenCommunityApp" />-->
         <activity
             android:name=".activities.SplashActivity"
             android:exported="true"
