@@ -13,6 +13,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.example.geekhavencommunityapp.activities.BaseHomeActivity
+import com.example.geekhavencommunityapp.activities.signinActivity
 import com.example.geekhavencommunityapp.activities.usernameActivity
 import com.example.geekhavencommunityapp.fragments.Intro1
 import com.example.geekhavencommunityapp.fragments.Intro2
@@ -63,7 +64,7 @@ class OnboardingPage : AppCompatActivity() {
         // skip button
         val skip: TextView = findViewById(R.id.btnSkip)
         skip.setOnClickListener {
-            val intent = Intent(this, usernameActivity::class.java)
+            val intent = Intent(this, signinActivity::class.java)
             startActivity(intent)
         }
 
@@ -71,7 +72,7 @@ class OnboardingPage : AppCompatActivity() {
         next.setOnClickListener {
             val viewPager = findViewById<ViewPager2>(R.id.view_pager)
             if (viewPager.currentItem == 2) {
-                val intent = Intent(this, usernameActivity::class.java)
+                val intent = Intent(this, signinActivity::class.java)
                 startActivity(intent)
             }
             viewPager.currentItem = viewPager.currentItem + 1

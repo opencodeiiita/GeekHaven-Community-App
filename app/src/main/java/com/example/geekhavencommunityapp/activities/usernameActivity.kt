@@ -66,7 +66,7 @@ class usernameActivity : AppCompatActivity() {
 
             val intent = Intent(
                 this,
-                emailActivity:: class.java)
+                BaseHomeActivity:: class.java)
 
 
 
