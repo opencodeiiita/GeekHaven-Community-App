@@ -72,7 +72,7 @@
         app:hintTextColor="#1540DD"
         android:background="#0a0c16">
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/email"
+            android:id="@+id/signupName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Enter your name"
@@ -95,7 +95,7 @@
         app:hintTextColor="#1540DD"
         android:background="#0a0c16">
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/password"
+            android:id="@+id/signupEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Enter your mail"
@@ -118,6 +118,7 @@
         app:hintTextColor="#1540DD"
         android:background="#0a0c16">
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/signupPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Enter your password"
@@ -162,6 +163,7 @@
             android:src="@drawable/apple"/>
 
         <ImageView
+            android:id="@+id/signupGoogle"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_marginStart="15dp"
