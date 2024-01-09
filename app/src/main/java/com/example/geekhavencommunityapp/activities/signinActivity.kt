@@ -93,7 +93,7 @@ class signinActivity : AppCompatActivity() {
             signInRequest = BeginSignInRequest.builder().setGoogleIdTokenRequestOptions(
                 BeginSignInRequest.GoogleIdTokenRequestOptions.builder().setSupported(true)
                     .setServerClientId(getString(R.string.server_client_id))
-                    .setFilterByAuthorizedAccounts(false).build()
+                    .setFilterByAuthorizedAccounts(true).build()
             ).setAutoSelectEnabled(true).build()
 
             oneTapClient.beginSignIn(signInRequest)
@@ -106,7 +106,7 @@ class signinActivity : AppCompatActivity() {
                     )
                 }).addOnFailureListener(this,
                     OnFailureListener { e -> // No Google Accounts found. Just continue presenting the signed-out UI.
-                        Toast.makeText(this, e.localizedMessage, Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "User not found, sign up first", Toast.LENGTH_SHORT).show()
                         Log.d(ContentValues.TAG, e.localizedMessage)
                     })
         }
