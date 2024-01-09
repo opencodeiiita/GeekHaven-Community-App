@@ -12,7 +12,100 @@
           "package_name": "com.example.geekhavencommunityapp"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "593622028532-1adkenbm8jc9lr6vm80skdah9bqmtnic.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.geekhavencommunityapp",
+            "certificate_hash": "37fda04ca835fbb4cbf5d2b8f1b52d13acb404af"
+          }
+        },
+        {
+          "client_id": "593622028532-1ekbspt8snoprnuis2roc725fvt1la0f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.geekhavencommunityapp",
+            "certificate_hash": "116f5fd9c7777c4a7a18d6f9f971391b7f7c594d"
+          }
+        },
+        {
+          "client_id": "593622028532-5j0vsu3ppdvvblhbjfie991jk4vu80e5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.geekhavencommunityapp",
+            "certificate_hash": "7bb00266d92d20ddff32c4626b6afd798f747438"
+          }
+        },
+        {
+          "client_id": "593622028532-7ga2t5sdnsssisgmttjvdunr4lopfm7j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.geekhavencommunityapp",
+            "certificate_hash": "e6457282e79f3d4a2f1e9fc138b7e348c8f1172d"
+          }
+        },
+        {
+          "client_id": "593622028532-dpd0qhiggmvq0ne2r27gda6f45krcrc5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.geekhavencommunityapp",
+            "certificate_hash": "a0fb0288c6b86d6b9d029ee07bb978edace16dfd"
+          }
+        },
+        {
+          "client_id": "593622028532-k4j0hnhck23g8e0uho0a8kkklim0qfvg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.geekhavencommunityapp",
+            "certificate_hash": "0381434fb6d4427377b846f0f16c98be578d2464"
+          }
+        },
+        {
+          "client_id": "593622028532-m5m12n7o9vogt9ssldp3ijbeoe7ce0ek.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.geekhavencommunityapp",
+            "certificate_hash": "3eebfd544d1c8d2d553a9953ca3de7f99be6198d"
+          }
+        },
+        {
+          "client_id": "593622028532-okasm66kdg0qc4i1i13dkek5vbr3vdpn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.geekhavencommunityapp",
+            "certificate_hash": "0e472c5f1ece87b156a435c640e399154524c719"
+          }
+        },
+        {
+          "client_id": "593622028532-pq1si36t68anboro7ts50598ikajji0f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.geekhavencommunityapp",
+            "certificate_hash": "924157be9831a94c9ae54d8bec5984c75d0020d8"
+          }
+        },
+        {
+          "client_id": "593622028532-snq52ss0htr8f970gnjl73naei21kka8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.geekhavencommunityapp",
+            "certificate_hash": "e3b05730aa533d60429504043b164c21edaa5cd9"
+          }
+        },
+        {
+          "client_id": "593622028532-v0vob2ros3mhf539droso33f86puh9v2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.geekhavencommunityapp",
+            "certificate_hash": "fdeb92824aebacd19caf8264a29c7ef4e5f5958d"
+          }
+        },
+        {
+          "client_id": "593622028532-uub2b26htptl3cn1addr8gs01p4gqrou.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyD6zBsc7LtGhmXq3Fh1WmywfltMGd3EEl8"
@@ -20,7 +113,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "593622028532-uub2b26htptl3cn1addr8gs01p4gqrou.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
