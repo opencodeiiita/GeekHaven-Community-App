@@ -1,10 +1,12 @@
 package com.example.geekhavencommunityapp.fragments
 
 import android.os.Bundle
+import android.text.TextWatcher
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.ProgressBar
 import android.widget.TextView
@@ -20,6 +22,8 @@ data class Task(
 )
 
 class project : Fragment() {
+    private lateinit var adapter: TaskAdapter
+    private val tasks = mutableListOf<Task>()
 
     private lateinit var db: FirebaseFirestore
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,9 +47,18 @@ class project : Fragment() {
                 .commit()
         }
 
+        val searchBox: EditText = view.findViewById(R.id.searchBox)
+        searchBox.addTextChangedListener(object: TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun afterTextChanged(s: android.text.Editable?) {}
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                filterProjects(s.toString())
+            }
+        })
+
         val recyclerView: RecyclerView = view.findViewById(R.id.recyclerViewTasks)
 
-        val tasks = mutableListOf<Task>()
         db.collection("tasks").get().addOnSuccessListener { result ->
             for (document in result) {
                 val name = document.data["name"] as String
@@ -58,14 +71,24 @@ class project : Fragment() {
             recyclerView.adapter?.notifyDataSetChanged()
         }
 
-
-        recyclerView.adapter = TaskAdapter(tasks)
+        adapter = TaskAdapter(tasks)
+        recyclerView.adapter = adapter
 
         return view
     }
+
+    private fun filterProjects(query: String) {
+        val filteredList = mutableListOf<Task>()
+        for (task in tasks) {
+            if (task.name.contains(query, true) || task.type.contains(query, true)) {
+                filteredList.add(task)
+            }
+        }
+        adapter.updateList(filteredList)
+    }
 }
 
-class TaskAdapter(private val tasks: List<Task>) :
+class TaskAdapter(private var tasks: List<Task>) :
     RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
 
     class TaskViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -91,5 +114,10 @@ class TaskAdapter(private val tasks: List<Task>) :
 
     override fun getItemCount(): Int {
         return tasks.size
+    }
+
+    fun updateList(newList: List<Task>) {
+        tasks = newList
+        notifyDataSetChanged()
     }
 }
