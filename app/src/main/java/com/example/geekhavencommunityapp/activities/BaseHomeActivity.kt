@@ -1,10 +1,17 @@
 package com.example.geekhavencommunityapp.activities
 
+import android.app.Dialog
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.GestureDetector
+import android.view.Gravity
 import android.view.MenuItem
 import android.view.MotionEvent
+import android.view.ViewGroup
+import android.view.Window
 import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
@@ -73,6 +80,11 @@ class BaseHomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
         sidebarButton.setOnClickListener {
             drawerLayout.openDrawer(GravityCompat.START)
         }
+
+        val addButton: ImageButton = findViewById(R.id.AddButton)
+        addButton.setOnClickListener {
+            showBottomLayout()
+        }
     }
 
     private inner class GestureListener : GestureDetector.OnGestureListener{
@@ -133,11 +145,30 @@ class BaseHomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
         } else {
             super.onBackPressed()
         }
+
     }
 
     private fun loadFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
             .replace(R.id.nav_host_fragment, fragment)
             .commit()
+    }
+
+    private fun showBottomLayout() {
+        val dialog = Dialog(this)
+        dialog.setContentView(R.layout.bottom_sheet_layout)
+
+        val closeButton: ImageView = dialog.findViewById(R.id.imageViewClose)
+        closeButton.setOnClickListener {
+            dialog.dismiss()
+        }
+
+        dialog.show()
+        dialog.window?.setLayout(
+            ViewGroup.LayoutParams.MATCH_PARENT,
+            ViewGroup.LayoutParams.WRAP_CONTENT)
+        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        dialog.window?.attributes?.windowAnimations = R.style.DialogAnimation
+        dialog.window?.setGravity(Gravity.BOTTOM)
     }
 }
