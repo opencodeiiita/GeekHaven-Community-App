@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?><!-- item_day_layout.xml -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    android:layout_marginHorizontal="5dp"
+    android:background="#0a0c16">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutDayView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/outlined_search_box"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="30dp">
+
+        <TextView
+            android:id="@+id/textViewDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginEnd="20dp"
+            android:gravity="center"
+            android:text="12"
+            android:textColor="#848a94"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textViewDay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewDate"
+            android:layout_centerHorizontal="true"
+            android:text="Wed"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/poppins"
+            android:textColor="#848a94"
+            android:textSize="14sp" />
+    </RelativeLayout>
+</RelativeLayout>

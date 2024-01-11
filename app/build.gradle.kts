@@ -58,4 +58,5 @@ dependencies {
     implementation("com.google.firebase:firebase-firestore")
     implementation("com.google.android.gms:play-services-auth:20.7.0")
     implementation("app.futured.donut:donut:2.2.3")
+    implementation("com.kizitonwose.calendar:view:2.4.1")
 }
