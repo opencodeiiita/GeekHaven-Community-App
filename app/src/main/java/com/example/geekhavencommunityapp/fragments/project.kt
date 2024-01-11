@@ -9,15 +9,19 @@ import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.ProgressBar
+import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.geekhavencommunityapp.R
+import com.example.geekhavencommunityapp.activities.BaseHomeActivity
 import com.google.firebase.firestore.FirebaseFirestore
 
 data class Task(
+    val id: String,
     val name: String,
     val type: String,
     val progressDone: Int,
+    val progressOngoing: Int,
     val progressTotal: Int,
 )
 
@@ -61,11 +65,13 @@ class project : Fragment() {
 
         db.collection("tasks").get().addOnSuccessListener { result ->
             for (document in result) {
+                val id = document.id
                 val name = document.data["name"] as String
                 val type = document.data["type"] as String
                 val progressDone = document.data["progressDone"] as Long
+                val progressOngoing = document.data["progressOngoing"] as Long
                 val progressTotal = document.data["progressTotal"] as Long
-                val task = Task(name, type, progressDone.toInt(), progressTotal.toInt())
+                val task = Task(id, name, type, progressDone.toInt(), progressOngoing.toInt(), progressTotal.toInt())
                 tasks.add(task)
             }
             recyclerView.adapter?.notifyDataSetChanged()
@@ -92,6 +98,7 @@ class TaskAdapter(private var tasks: List<Task>) :
     RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
 
     class TaskViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val taskView: RelativeLayout = view.findViewById(R.id.relativeLayoutTask)
         val taskName: TextView = view.findViewById(R.id.textViewTaskTitle)
         val taskType: TextView = view.findViewById(R.id.textViewTaskType)
         val taskProgress: ProgressBar = view.findViewById(R.id.progressBarTask)
@@ -110,6 +117,17 @@ class TaskAdapter(private var tasks: List<Task>) :
         holder.taskType.text = task.type
         holder.taskProgress.progress = task.progressDone * 100 / task.progressTotal
         holder.taskProgressText.text = "${task.progressDone}/${task.progressTotal}"
+        holder.taskView.setOnClickListener {
+            val todo = task.progressTotal - task.progressDone - task.progressOngoing
+            val fragment = ProjectDetails(todo , task.progressOngoing, task.progressDone)
+            val bundle = Bundle()
+            bundle.putString("id", task.id)
+            fragment.arguments = bundle
+            (holder.itemView.context as BaseHomeActivity).supportFragmentManager.beginTransaction()
+                .replace(R.id.nav_host_fragment, fragment)
+                .addToBackStack(null)
+                .commit()
+        }
     }
 
     override fun getItemCount(): Int {
