@@ -42,6 +42,14 @@ class Home : Fragment() {
         val textView = view.findViewById<TextView>(R.id.textView1)
         textView.text = format
 
+        textView.setOnClickListener {
+            val fragment = MonthlyTask()
+            val transaction = requireActivity().supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.nav_host_fragment, fragment)
+            transaction.addToBackStack(null)
+            transaction.commit()
+        }
+
 
         // setting mytasks
         fillMyTasks(view)

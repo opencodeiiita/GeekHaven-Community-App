@@ -24,6 +24,11 @@ class MonthlyTask : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_monthly_task, container, false)
 
+        val backButton: ImageButton = view.findViewById(R.id.imageButtonBack)
+        backButton.setOnClickListener {
+            requireActivity().onBackPressed()
+        }
+
         val recyclerView: RecyclerView = view.findViewById(R.id.recyclerViewDates)
         recyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
 

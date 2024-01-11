@@ -24,7 +24,6 @@ import com.example.geekhavencommunityapp.R
 import com.example.geekhavencommunityapp.fragments.community
 import com.example.geekhavencommunityapp.fragments.feed
 import com.example.geekhavencommunityapp.fragments.Home
-import com.example.geekhavencommunityapp.fragments.MonthlyTask
 import com.example.geekhavencommunityapp.fragments.profile
 import com.example.geekhavencommunityapp.fragments.project
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -34,7 +33,7 @@ class BaseHomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
 
     private val fragment1 = Home()
     private val fragment2 = project()
-    private val fragment3 = MonthlyTask()
+    private val fragment3 = community()
     private val fragment4 = profile()
 
     private lateinit var gestureDetector: GestureDetector
@@ -127,7 +126,7 @@ class BaseHomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
             R.id.nav_home -> replaceFragment(feed())
             R.id.nav_project -> replaceFragment(project())
             R.id.nav_profile -> replaceFragment(profile())
-            R.id.nav_community -> replaceFragment(MonthlyTask())
+            R.id.nav_community -> replaceFragment(community())
             R.id.nav_developer -> Toast.makeText(this, "ParadoxNJ005!", Toast.LENGTH_SHORT).show()
         }
         drawerLayout.closeDrawer(GravityCompat.START)
