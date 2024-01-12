@@ -1,0 +1,41 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="5dp"
+    android:background="#0a0c16"
+    android:orientation="horizontal">
+
+    <EditText
+        android:id="@+id/editTextTaskName"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:background="@drawable/outlined_search_box"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="center_vertical"
+        android:maxLines="1"
+        android:paddingHorizontal="15dp"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+    <Spinner
+        android:id="@+id/editTextTaskType"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/outlined_search_box"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="center_vertical"
+        android:maxLines="1"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        style="@style/SpinnerTextStyle"/>
+
+    <ImageButton
+        android:id="@+id/imageButtonRemoveTask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/remove_task"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="30dp"
+        android:background="@null"/>
+</LinearLayout>
