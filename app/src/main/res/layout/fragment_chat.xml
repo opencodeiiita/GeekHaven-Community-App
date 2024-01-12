@@ -100,7 +100,6 @@
                 android:layout_marginStart="5dp"
                 android:layout_alignParentStart="true"
                 android:layout_centerVertical="true"
-                android:foreground="@color/white"
                 app:srcCompat="@drawable/link" />
 
             <ImageView
@@ -123,7 +122,6 @@
                 android:hint="Enter message here"
                 android:paddingStart="12dp"
                 android:paddingEnd="12dp"
-                android:textColor="#BDC2C0"
                 android:textColorHint="#BDC2C0" />
 
 
