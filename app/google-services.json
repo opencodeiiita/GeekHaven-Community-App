@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "593622028532",
+    "firebase_url": "https://geekhaven-app-default-rtdb.asia-southeast1.firebasedatabase.app",
     "project_id": "geekhaven-app",
     "storage_bucket": "geekhaven-app.appspot.com"
   },
@@ -67,6 +68,14 @@
           "android_info": {
             "package_name": "com.example.geekhavencommunityapp",
             "certificate_hash": "3eebfd544d1c8d2d553a9953ca3de7f99be6198d"
+          }
+        },
+        {
+          "client_id": "593622028532-n85rg3602hvgvm5ob2sovf2o11rmg47v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.geekhavencommunityapp",
+            "certificate_hash": "fb329be3994a9f68038442fcaafcb3f3bdae2ba7"
           }
         },
         {
