@@ -20,7 +20,7 @@
         android:src="@drawable/intro_rectangle"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:id="@+id/btnNext"/>
+        android:id="@+id/shapeButtonNext"/>
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -59,10 +59,11 @@
                 android:id="@+id/btnSkip"/>
 
             <ImageButton
+                android:id="@+id/buttonNext"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/arrow_forward"
-                android:background="@null"
+                android:src="@null"
+                android:background="@drawable/arrow_forward"
                 app:tint="@color/white"
                 android:padding="10dp"
                 android:layout_alignParentEnd="true"

@@ -2,8 +2,6 @@ package com.example.geekhavencommunityapp
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -14,7 +12,6 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.example.geekhavencommunityapp.activities.BaseHomeActivity
 import com.example.geekhavencommunityapp.activities.signinActivity
-import com.example.geekhavencommunityapp.activities.usernameActivity
 import com.example.geekhavencommunityapp.fragments.Intro1
 import com.example.geekhavencommunityapp.fragments.Intro2
 import com.example.geekhavencommunityapp.fragments.Intro3
@@ -22,7 +19,6 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.tbuonomo.viewpagerdotsindicator.DotsIndicator
-import com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
 
 class OnboardingPage : AppCompatActivity() {
 
@@ -68,8 +64,17 @@ class OnboardingPage : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val next: ImageView = findViewById(R.id.btnNext)
+        val next: ImageView = findViewById(R.id.shapeButtonNext)
+        val nextshape: ImageView = findViewById(R.id.buttonNext)
         next.setOnClickListener {
+            val viewPager = findViewById<ViewPager2>(R.id.view_pager)
+            if (viewPager.currentItem == 2) {
+                val intent = Intent(this, signinActivity::class.java)
+                startActivity(intent)
+            }
+            viewPager.currentItem = viewPager.currentItem + 1
+        }
+        nextshape.setOnClickListener {
             val viewPager = findViewById<ViewPager2>(R.id.view_pager)
             if (viewPager.currentItem == 2) {
                 val intent = Intent(this, signinActivity::class.java)

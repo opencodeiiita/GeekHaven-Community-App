@@ -14,6 +14,12 @@ import androidx.activity.result.ActivityResult
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.IntentSenderRequest
 import androidx.activity.result.contract.ActivityResultContracts
+import com.android.volley.Request
+import com.android.volley.RequestQueue
+import com.android.volley.Response
+import com.android.volley.toolbox.JsonObjectRequest
+import com.android.volley.toolbox.Volley
+import com.example.geekhavencommunityapp.OnboardingPage
 import com.example.geekhavencommunityapp.R
 import com.example.geekhavencommunityapp.UserModel
 import com.google.android.gms.auth.api.identity.BeginSignInRequest
@@ -29,18 +35,20 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import org.json.JSONObject
 
 class signinActivity : AppCompatActivity() {
     private lateinit var auth : FirebaseAuth
     private lateinit var oneTapClient: SignInClient
     private lateinit var signInRequest: BeginSignInRequest
     private lateinit var launcher: ActivityResultLauncher<IntentSenderRequest>
-
+    private lateinit var requestQueue: RequestQueue
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signin)
 
         auth = Firebase.auth
+        requestQueue = Volley.newRequestQueue(this)
 
         val email = findViewById<EditText>(R.id.email)
         val password = findViewById<EditText>(R.id.password)
@@ -53,39 +61,41 @@ class signinActivity : AppCompatActivity() {
             startActivity(Intent(this, signupActivity::class.java))
         }
 
+
+
+        val backButton = findViewById<ImageView>(R.id.backButtonSignIn)
+        backButton.setOnClickListener {
+            val intent = Intent(this, OnboardingPage::class.java)
+            startActivity(intent)
+        }
+
         Log.d("Lets check it out", UserModel.username?:"null string recieved")
 
 
-        next.setOnClickListener{
-            UserModel.setEmail(email.text.toString())
-            val currentIntent = intent
-//            val intent = Intent(
-//                this,
-//                passwordActivity:: class.java
-//            )
-//
-//                startActivity(
-//                    intent
-//                )
-            auth.signInWithEmailAndPassword(UserModel.email!! , password.text.toString())
-                .addOnCompleteListener(this) { task ->
-                    if (task.isSuccessful) {
-                        // Sign in success, update UI with the signed-in user's information
-                        Log.d(ContentValues.TAG, "createUserWithEmail:success")
-                        val user = auth.currentUser
-                        startActivity(Intent(this, BaseHomeActivity::class.java))
+        next.setOnClickListener {
+            val url = "http://your-backend-url/signin"
+            val jsonBody = JSONObject()
+            jsonBody.put("email", email.text.toString())
+            jsonBody.put("password", password.text.toString())
 
-                    } else {
-                        // If sign in fails, display a message to the user.
-                        Log.w(ContentValues.TAG, "createUserWithEmail:failure", task.exception)
-                        Toast.makeText(
-                            baseContext,
-                            "Authentication failed.",
-                            Toast.LENGTH_SHORT,
-                        ).show()
-                    }
-                }
+            val request = JsonObjectRequest(
+                Request.Method.POST, url, jsonBody,
+                { response ->
+                    // Handle successful signin
+                    val token = response.getString("token")
+                    Toast.makeText(this, "Signed in successfully!", Toast.LENGTH_SHORT).show()
+                    // Proceed to the next activity or perform actions as needed
+                },
+                { error ->
+                    // Handle unsuccessful signin
+                    Toast.makeText(this, "Signin failed: ${error.message}", Toast.LENGTH_SHORT)
+                        .show()
+                })
+
+            requestQueue.add(request)
         }
+
+
 
         oneTapClient = Identity.getSignInClient(this)
 
