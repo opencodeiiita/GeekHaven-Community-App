@@ -1,6 +1,12 @@
 # GeekHaven Commmunity App
 **To create a one-stop app for all the management tasks of GeekHaven.**</p>
 
+## 🏆Our Top Contributors
+
+<a href="https://github.com/opencodeiiita/GeekHaven-Community-App/graphs/contributors">
+  <img src = "https://contrib.rocks/image?repo=opencodeiiita/GeekHaven-Community-App"/>
+</a>
+
 ## 🚀What issue does this App address?
 This app would be a one-stop solution for all management tasks of GeekHaven. The app will include a comprehensive space where teams can discuss their ideas, display the current running projects of different wings for better collaboration.
 
@@ -62,9 +68,4 @@ Whether you are working on a new feature or facing a doubt please feel free to a
 - [Set your commit email address in Git.](https://help.github.com/articles/setting-your-commit-email-address-in-git)
 - [Firebase official Documentation](https://firebase.google.com/docs)
 - [Kotlin official Documentation](https://kotlinlang.org/docs/home.html)
- 
-## 🏆Our Top Contributors
 
-<a href="https://github.com/opencodeiiita/GeekHaven-Community-App/graphs/contributors">
-  <img src = "https://contrib.rocks/image?repo=opencodeiiita/GeekHaven-Community-App"/>
-</a>
